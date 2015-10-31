@@ -1,4 +1,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<style type="text/css">
+	form {
+		text-align: center;
+		width: 25em;
+		margin: 0 auto;
+		padding: 1em;
+		border: 1px solid #E0E0E0;
+		font-size: 1em;
+		font-family: monospace;
+		line-height: 1;
+		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+		background: #F5F5F5;
+	}
+	label {
+		display: inline-block;
+		text-align: left;
+		width: 12em;
+		vertical-align: bottom;
+		border-bottom: 1px dashed #CDCDCD;
+	}
+	input {
+		display: inline-block;
+		width: 12em;
+	}
+		.subm-rest input {
+		width: 10em;
+		margin: 1em;
+}
+</style>
+
+
 <html>
 	<head>
 		<title>
@@ -6,15 +38,32 @@
 		</title>
 	</head>
 		<body>
+		<!--Inicia tabla-->
+ 
+		<!--Termina Tabla-->
 			<div =id="body">
-			<form method="get" action="HelloWorld.asp">
-				Nombre:<input type="text" name="nombre" /><br/><br/>
+			<form method="get" action="HelloWorld">
+				Nombre Producto:<input type="text" name="nombre" /><br/><br/>
 				Precio:<input type="text" name="precio" /><br/><br/>
-				Categoria:<input type="text" name="categoria" /><br/><br/>
-				Moneda:<input type="text" name="moneda" /><br/><br/>
-				Existencia:<input type="text" name="existencia" /><br/><br/>
-				<input type="submit" value="Petición"/>
+				Categoria:<input list="categoria" name="categoria">
+					<datalist id="categoria">
+						<option value="Abarrotes">
+						<option value="Lacteos">
+						<option value="Ropa">
+						<option value="Farmacia">
+						<option value="Electronica">
+						<option value="Otros">
+					</datalist> <br/><br/>
+				Moneda:<input list="moneda" name="moneda">
+					<datalist id="moneda">
+						<option value="Peso">
+						<option value="Dolar">
+						<option value="Euro">
+					</datalist> <br/><br/>
+				Existencia:<input type="number" name="existencia" min="0" max="10000" /><br/><br/>
+				<input type="submit" value="Guardar"/>
 			</form>
+
 			</div>
 		</body>
 </html>
